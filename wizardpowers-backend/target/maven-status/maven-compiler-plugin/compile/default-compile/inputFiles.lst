@@ -1,0 +1,7 @@
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/persistence/service/Impl/WizardServiceImpl.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/persistence/service/WizardService.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/query/WizardQuery.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/persistence/domain/Wizard.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/persistence/repository/WizardRepository.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/WizardPowersApplication.java
+/home/zyv42/dev/projects/wizardpowers/wizardpowers-backend/src/main/java/org/eugenarium/wizardpowers/mutation/WizardMutation.java

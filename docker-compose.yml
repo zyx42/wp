@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+  wizardpowers-frontend:
+    build: wizardpowers-frontend/
+    image: wizardpowers-frontend
+    container_name: wizardpowers-frontend
+    volumes:
+      - '/wizardpowers-frontend:/app'
+      - '/app/node_modules'
+    environment:
+      VUE_APP_ENV: development
+    depends_on:
+      - wizardpowers-backend
+    ports:
+      - 8085:7777
+    networks:
+      - frontendbackend
+
+  wizardpowers-backend:
+    build: wizardpowers-backend/
+    image: wizardpowers-backend
+    container_name: wizardpowers-backend
+    depends_on:
+      - db
+    ports:
+      - 8081:8081
+    networks:
+      - frontendbackend
+      - backenddb
+
+  db:
+    build: wizardpowers-db/
+    image: postgres
+    container_name: wizardpowers-db
+    environment:
+      POSTGRES_USER: wizard
+      POSTGRES_PASSWORD: powers
+      POSTGRES_DB: wizardpowers
+    ports:
+      - 5432:5432
+    networks:
+      - backenddb
+
+networks:
+  frontendbackend:
+    driver: bridge
+  backenddb:
+    driver: bridge

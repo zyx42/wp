@@ -1,0 +1,7 @@
+org/eugenarium/wizardpowers/mutation/WizardMutation.class
+org/eugenarium/wizardpowers/persistence/domain/Wizard.class
+org/eugenarium/wizardpowers/WizardPowersApplication.class
+org/eugenarium/wizardpowers/persistence/service/WizardService.class
+org/eugenarium/wizardpowers/persistence/service/Impl/WizardServiceImpl.class
+org/eugenarium/wizardpowers/query/WizardQuery.class
+org/eugenarium/wizardpowers/persistence/repository/WizardRepository.class
