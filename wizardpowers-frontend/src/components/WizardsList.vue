@@ -3,15 +3,15 @@
         <div>
             <h4>Wizards List:</h4>
             <ul>
-                <wizard v-for="wizard in wizards" :key="wizard.id" :wizard="wizard">
+                <li v-for="wizard in wizards" :key="wizard.id">
+                    <wizard :wizard="wizard"/>
    <!--                 <router-link :to="{
                             name: 'wizard-details',
                             params: { wizard: wizard, id: wizard.id }
                             }">
                         {{wizard.name}}
                     </router-link>-->
-
-                </wizard>
+                </li>
             </ul>
         </div>
         <div>
@@ -21,30 +21,26 @@
 
 
 <script>
-//import gql from "graphql-tag";
 import Wizard from "./Wizard";
+import { ALL_WIZARDS_QUERY } from "../constants/graphql";
 
 export default {
     name: 'WizardsList',
     data () {
         return {
-            wizards: [
-                {
-                    id: '1',
-                    type: 'cool',
-                    name: 'Merlin',
-                    powerLevel: '90'
-                }, {
-                    id: '2',
-                    type: 'lame',
-                    name: 'Harry Potter',
-                    powerLevel: '1'
-                }
-            ]
+            wizards: []
         }
     },
     components: {
         Wizard
+    },
+    apollo: {
+        getWizards: {
+            query: ALL_WIZARDS_QUERY,
+            result({data}) {
+                this.wizards = data.wizards
+            }
+        }
     }
 }
 </script>
