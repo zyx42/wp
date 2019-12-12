@@ -1,21 +1,24 @@
-<template>
+<template id="wizard">
     <div>
-        <h4>Wizard</h4>
+        <h4>{{ wizard.name }}</h4>
         <div>
-            <label>Name: </label> {{wizard.name}}
+            <label>Type: </label> {{ wizard.type }}
         </div>
         <div>
-            <label>Type: </label> {{wizard.type}}
+            <label>Power Level: </label> {{ wizard.powerLevel }}
         </div>
-        <div>
-            <label>Power Level: </label> {{wizard.powerLevel}}
-        </div>
+        <br />
+        <router-link v-bind:to="'/'">Back</router-link>
     </div>
 </template>
 
 <script>
 export default {
     name: 'Wizard',
-    props: ['wizard']
+    data () {
+        return {
+            wizard: this.$route.params.wizard
+        }
+    }
 }
 </script>

@@ -7,9 +7,11 @@ type Wizard {
 
 type Query {
     wizards:[Wizard]
-    wizard(id: ID):Wizard
+    wizardById(id: ID):Wizard
 }
 
 type Mutation {
     addWizard(type:String!, name: String!, powerLevel: Int):Wizard
+    updateWizard(id: ID, type: String!, name: String!, powerLevel: Int):Wizard
+    deleteWizard(id: ID): Wizard
 }

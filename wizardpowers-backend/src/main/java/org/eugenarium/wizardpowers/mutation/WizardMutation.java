@@ -17,4 +17,17 @@ public class WizardMutation implements GraphQLMutationResolver {
     public Wizard addWizard(String type, String name, int powerLevel) {
         return this.wizardService.addWizard(type, name, powerLevel);
     }
+
+    public Wizard updateWizard(Long id, String type, String name, int powerLevel) {
+        Wizard wizard = wizardService.getWizard(id).get();
+        wizard.setType(type);
+        wizard.setName(name);
+        wizard.setPowerLevel(powerLevel);
+
+        return this.wizardService.updateWizard(wizard);
+    }
+
+    public Wizard deleteWizard(Long id) {
+        return this.wizardService.deleteWizard(id);
+    }
 }

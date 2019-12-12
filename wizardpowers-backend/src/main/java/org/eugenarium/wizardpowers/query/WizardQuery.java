@@ -17,7 +17,7 @@ public class WizardQuery implements GraphQLQueryResolver {
         this.wizardService = wizardService;
     }
 
-    public Optional<Wizard> getWizard(Long id) {
+    public Optional<Wizard> getWizardById(Long id) {
         return this.wizardService.getWizard(id);
     }
 

@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -38,5 +37,17 @@ public class WizardServiceImpl implements WizardService {
         wizard.setPowerLevel(powerLevel);
 
         return this.wizardRepository.save(wizard);
+    }
+
+    @Override
+    public Wizard updateWizard(Wizard wizard) {
+        return this.wizardRepository.save(wizard);
+    }
+
+    @Override
+    public Wizard deleteWizard(Long id) {
+        Wizard wizard = getWizard(id).get();
+        wizardRepository.delete(wizardRepository.getOne(id));
+        return wizard;
     }
 }
