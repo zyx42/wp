@@ -1,24 +1,24 @@
 <template>
   <main id="app">
-    <div class="container">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-      <div class="container-fluid">
-        <div>
-          <ul class="nav navbar-nav">
-            <router-link class="nav-item" v-bind:to="'wizards'"><a class="nav-link">WIZARDS</a></router-link>
-            <router-link class="nav-item" v-bind:to="'wizard-add'"><a class="nav-link">ADD WIZARD</a></router-link>
-          </ul>
+    <section>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Fearsome wizard powers!</h1>
+          <p>This application is going to help you with managing a list of wizards.</p>
+          <p>You can find the list of all registered wizards at
+            <router-link class="nav-item" v-bind:to="'wizards'"><a class="nav-link">WIZARDS</a></router-link> or
+            you can <router-link class="nav-item" v-bind:to="'wizard-add'"><a class="nav-link">ADD WIZARD</a></router-link>
+          </p>
         </div>
       </div>
-    </nav>
-    <div class="row">
-      <div class="col-12 jumbotron">
+    </section>
+    <section>
+      <div class="container">
         <transition name="slide" mode="out-in">
           <router-view />
         </transition>
       </div>
-    </div>
-    </div>
+    </section>
   </main>
 </template>
 
